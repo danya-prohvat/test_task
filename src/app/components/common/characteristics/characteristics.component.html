@@ -1,8 +1,13 @@
 <div class="container">
-    <p *ngIf="loading">Loading...</p>
+  <p *ngIf="loading">Loading...</p>
+  <p
+    *ngIf="!loading && !characteristics.length && desiredAnalogId"
+    class="text-center text-lg">
+    Характеристики не знайдені
+  </p>
 
-    <div *ngFor="let characteristic of characteristics" class="row">
-        <span>{{ characteristic.attribute.title }}</span>
-        <span>{{ characteristic.value }}</span>
-    </div>
+  <div *ngFor="let characteristic of characteristics" class="row">
+    <span>{{ characteristic.attribute.title }}</span>
+    <span>{{ characteristic.value }}</span>
+  </div>
 </div>

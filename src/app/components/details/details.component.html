@@ -8,26 +8,35 @@
     <button>Search</button>
   </form>
 
-  <app-characteristics [desiredAnalogId]="desiredAnalogId"></app-characteristics>
+  <app-characteristics
+    [desiredAnalogId]="desiredAnalogId"></app-characteristics>
 
   <div class="tableContainer">
     <span class="tableName" *ngIf="details.length">Результати пошуку</span>
     <p *ngIf="detailsLoading">Loading...</p>
-    <p *ngIf="!detailsLoading && !details.length && isSubmitted" class="text-center text-lg">Деталів за такими параметрами не знайдено</p>
+    <p
+      *ngIf="!detailsLoading && !details.length && isSubmitted"
+      class="text-center text-lg">
+      Деталів за такими параметрами не знайдено
+    </p>
     <app-table-header [details]="details"></app-table-header>
     <div
       *ngFor="let detail of details"
       class="row"
       [ngClass]="{ rowSelected: desiredAnalogId === detail.id }"
       (click)="changeDetail(detail.id)">
-        <span>{{ detail.article }}</span>
-        <span>{{ detail.title }}</span>
-        <span>{{ detail.yourPriceUAH.amount }}</span>
+      <span>{{ detail.article }}</span>
+      <span>{{ detail.title }}</span>
+      <span>{{ detail.yourPriceUAH.amount }}</span>
     </div>
 
     <span class="tableName" *ngIf="analogues.length">Аналоги</span>
     <p *ngIf="analoguesLoading">Loading...</p>
-    <p *ngIf="!analoguesLoading && !analogues.length && details.length" class="text-center text-lg">Аналогів не знайдено</p>
+    <p
+      *ngIf="!analoguesLoading && !analogues.length && details.length"
+      class="text-center text-lg">
+      Аналогів не знайдено
+    </p>
     <app-table-header [details]="analogues"></app-table-header>
     <div *ngFor="let detail of analogues" class="row">
       <span>{{ detail.article }}</span>
