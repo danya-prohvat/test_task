@@ -11,28 +11,22 @@
   <div class="tableContainer">
     <span class="tableName" *ngIf="details.length">Результати пошуку</span>
     <p *ngIf="detailsLoading" class="text-center text-lg">Loading...</p>
-    <div *ngIf="details.length" class="titles">
-      <span>Артикул</span>
-      <span>Найменування</span>
-      <span>Ціна</span>
-    </div>
+    <p *ngIf="!detailsLoading && !details.length && isSubmitted" class="text-center text-lg">Деталів за такими параметрами не знайдено</p>
+    <app-table-header [details]="details"></app-table-header>
     <div
       *ngFor="let detail of details"
       class="row"
       [ngClass]="{ rowSelected: desiredAnalogId === detail.id }"
       (click)="changeDetail(detail.id)">
-      <span>{{ detail.article }}</span>
-      <span>{{ detail.title }}</span>
-      <span>{{ detail.yourPriceUAH.amount }}</span>
+        <span>{{ detail.article }}</span>
+        <span>{{ detail.title }}</span>
+        <span>{{ detail.yourPriceUAH.amount }}</span>
     </div>
 
     <span class="tableName" *ngIf="analogues.length">Аналоги</span>
     <p *ngIf="analoguesLoading" class="text-center text-lg">Loading...</p>
-    <div *ngIf="analogues.length" class="titles">
-      <span>Артикул</span>
-      <span>Найменування</span>
-      <span>Ціна</span>
-    </div>
+    <p *ngIf="!analoguesLoading && !analogues.length && details.length" class="text-center text-lg">Аналогів не знайдено</p>
+    <app-table-header [details]="analogues"></app-table-header>
     <div *ngFor="let detail of analogues" class="row">
       <span>{{ detail.article }}</span>
       <span>{{ detail.title }}</span>

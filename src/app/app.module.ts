@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './components/details/details.component';
+import { TableHeaderComponent } from './components/common/table-header/table-header.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DetailsComponent],
+  declarations: [AppComponent, LoginComponent, DetailsComponent, TableHeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

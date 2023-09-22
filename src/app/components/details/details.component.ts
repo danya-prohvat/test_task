@@ -20,6 +20,7 @@ export class DetailsComponent {
 
   detailsLoading = false;
   analoguesLoading = false;
+  isSubmitted = false;
 
   desiredAnalogId: number | null = null;
 
@@ -28,6 +29,7 @@ export class DetailsComponent {
   });
 
   submit() {
+    this.isSubmitted = true;
     this.detailsLoading = true;
     this.details = [];
     this.analogues = [];
