@@ -8,4 +8,13 @@ export interface IDetail {
   };
 }
 
+export interface ICharacteristic {
+  value: string
+  attribute: {
+    title: string
+  }
+}
+
 export type IDetails = IDetail[];
+export type ICharacteristics = ICharacteristic[];
+

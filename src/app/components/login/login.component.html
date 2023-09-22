@@ -23,7 +23,7 @@
     </div>
 
     <button
-      [disabled]="emailErrors || passwordErrors"
+      [disabled]="emailErrors || passwordErrors || isValueEmpty"
       class="form-button"
       type="submit">
       {{ loading ? 'loading...' : 'SIGN IN' }}

@@ -8,9 +8,11 @@
     <button>Search</button>
   </form>
 
+  <app-characteristics [desiredAnalogId]="desiredAnalogId"></app-characteristics>
+
   <div class="tableContainer">
     <span class="tableName" *ngIf="details.length">Результати пошуку</span>
-    <p *ngIf="detailsLoading" class="text-center text-lg">Loading...</p>
+    <p *ngIf="detailsLoading">Loading...</p>
     <p *ngIf="!detailsLoading && !details.length && isSubmitted" class="text-center text-lg">Деталів за такими параметрами не знайдено</p>
     <app-table-header [details]="details"></app-table-header>
     <div
@@ -24,7 +26,7 @@
     </div>
 
     <span class="tableName" *ngIf="analogues.length">Аналоги</span>
-    <p *ngIf="analoguesLoading" class="text-center text-lg">Loading...</p>
+    <p *ngIf="analoguesLoading">Loading...</p>
     <p *ngIf="!analoguesLoading && !analogues.length && details.length" class="text-center text-lg">Аналогів не знайдено</p>
     <app-table-header [details]="analogues"></app-table-header>
     <div *ngFor="let detail of analogues" class="row">

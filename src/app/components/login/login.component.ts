@@ -16,6 +16,7 @@ export class LoginComponent {
     private router: Router,
   ) {}
 
+  isSubmitted = false;
   loading = false;
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.minLength(4)]),
@@ -39,8 +40,16 @@ export class LoginComponent {
     );
   }
 
+  get isValueEmpty() {
+    return !(
+      this.form.value.email &&
+      this.form.value.password
+    );
+  }
+
   submit() {
     this.loading = true;
+    this.isSubmitted = true;
 
     this.authService.login(this.form.value).subscribe({
       next: (data) => {

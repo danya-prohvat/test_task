@@ -1,0 +1,8 @@
+<div class="container">
+    <p *ngIf="loading">Loading...</p>
+
+    <div *ngFor="let characteristic of characteristics" class="row">
+        <span>{{ characteristic.attribute.title }}</span>
+        <span>{{ characteristic.value }}</span>
+    </div>
+</div>

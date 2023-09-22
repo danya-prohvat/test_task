@@ -33,6 +33,7 @@ export class DetailsComponent {
     this.detailsLoading = true;
     this.details = [];
     this.analogues = [];
+    this.desiredAnalogId = null
     this.detailsService.search(this.form.value.detail).subscribe({
       next: (data) => {
         this.detailsLoading = false;
@@ -55,7 +56,7 @@ export class DetailsComponent {
     );
 
     this.detailsService
-      .searchAnal(detail?.displayBrand, detail?.article)
+      .searchAnalogs(detail?.displayBrand, detail?.article)
       .subscribe({
         next: (data) => {
           this.analoguesLoading = false;
