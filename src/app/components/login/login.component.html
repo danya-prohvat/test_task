@@ -1,0 +1,32 @@
+<div class="container">
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <h2>Sign in</h2>
+
+    <div class="form-field">
+      <hr />
+      <label>User Name:</label>
+      <input placeholder="user name..." formControlName="email" type="text" />
+      <span>{{
+        emailErrors ? 'Required. Length must be greater than 4.' : ''
+      }}</span>
+    </div>
+    <div class="form-field">
+      <hr />
+      <label>Password:</label>
+      <input
+        placeholder="password..."
+        formControlName="password"
+        type="password" />
+      <span>{{
+        passwordErrors ? 'Required. Length must be greater than 4.' : ''
+      }}</span>
+    </div>
+
+    <button
+      [disabled]="emailErrors || passwordErrors"
+      class="form-button"
+      type="submit">
+      {{ loading ? 'loading...' : 'SIGN IN' }}
+    </button>
+  </form>
+</div>
