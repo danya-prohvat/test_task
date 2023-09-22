@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IDetails } from 'src/app/types/details.types';
+import { IDetails } from '@types';
 
 @Component({
   selector: 'app-table-header',

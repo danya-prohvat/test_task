@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DetailsService } from '@services/details.service';
+import { IDetails } from '@types';
 import { ToastrService } from 'ngx-toastr';
-import { DetailsService } from 'src/app/services/details.service';
-import { IDetails } from 'src/app/types/details.types';
 
 @Component({
   selector: 'app-details',
