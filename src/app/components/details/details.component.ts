@@ -5,11 +5,11 @@ import { DetailsService } from 'src/app/services/details.service';
 import { IDetails } from 'src/app/types/details.types';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.scss'],
 })
-export class HomeComponent {
+export class DetailsComponent {
   constructor(
     private detailsService: DetailsService,
     private toastr: ToastrService,
